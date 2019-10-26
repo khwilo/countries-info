@@ -5,13 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch,
+  faChevronDown,
+  faLongArrowAltLeft
+} from '@fortawesome/free-solid-svg-icons';
 
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
 @NgModule({
-  declarations: [CountriesComponent],
+  declarations: [CountriesComponent, CountryDetailComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
@@ -22,6 +27,6 @@ import { CountriesComponent } from './countries.component';
 })
 export class CountriesModule {
   constructor() {
-    library.add(faChevronDown, faSearch);
+    library.add(faChevronDown, faSearch, faLongArrowAltLeft);
   }
 }

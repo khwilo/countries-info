@@ -7,6 +7,7 @@ import { map, catchError } from 'rxjs/operators';
 const BASE_COUNTRIES_API_URL = 'https://restcountries.eu/rest/v2/all';
 const BASE_COUNTRIES_REGION_API_URL =
   'https://restcountries.eu/rest/v2/region/';
+const BASE_COUNTRY_CODE_API_URL = 'https://restcountries.eu/rest/v2/alpha/';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,12 @@ export class CountryDataService {
   getCountriesByRegion(region: string) {
     return this.http
       .get(`${BASE_COUNTRIES_REGION_API_URL}${region}`)
+      .pipe(catchError(this.handleError));
+  }
+
+  getCountryByCode(code: string) {
+    return this.http
+      .get(`${BASE_COUNTRY_CODE_API_URL}${code}`)
       .pipe(catchError(this.handleError));
   }
 
