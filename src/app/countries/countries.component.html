@@ -1,0 +1,68 @@
+<main class="main">
+  <nav class="nav">
+    <div class="country-search">
+      <div class="search-country">
+        <div class="search-icon-container">
+          <span class="search-icon"><fa-icon icon="search"></fa-icon></span>
+        </div>
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="{{ searchPlaceHolder }}"
+          [(ngModel)]="countryListFilter"
+        />
+      </div>
+    </div>
+
+    <div class="country-filter-container">
+      <div class="country-filter">
+        <div class="country-filter-label">
+          {{ filterByLabel }}
+        </div>
+        <div class="dropdown-icon-container">
+          <span class="dropdown-icon" (click)="openSelection()">
+            <fa-icon icon="chevron-down"></fa-icon>
+          </span>
+        </div>
+      </div>
+
+      <div class="region-names-container">
+        <ul class="region-names" id="region-names">
+          <li
+            *ngFor="let region of regions"
+            (click)="fetchCountriesByRegion(region)"
+          >
+            {{ region }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="countries-container">
+    <div class="countries" *ngFor="let country of filteredCountries">
+      <div class="country-flag">
+        <img
+          class="flag-image"
+          src="{{ country.flag }}"
+          alt="{{ country.name }}'s flag"
+        />
+      </div>
+
+      <div class="country-details">
+        <div class="country-name">
+          {{ country.name }}
+        </div>
+        <div class="country-other-info">
+          <p>
+            <span class="population">Population:</span> {{ country.population }}
+          </p>
+          <p><span class="region">Region:</span> {{ country.region }}</p>
+          <p><span class="capital">Capital:</span> {{ country.capital }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

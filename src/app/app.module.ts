@@ -3,25 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faMoon,
-  faSearch,
-  faChevronDown,
-  faLongArrowAltLeft
-} from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CountriesModule } from './countries/countries.module';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
-  imports: [BrowserModule, FontAwesomeModule, AppRoutingModule],
+  declarations: [AppComponent, NavigationComponent, NotFoundComponent],
+  imports: [
+    BrowserModule,
+    FontAwesomeModule,
+    CountriesModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor() {
-    library.add(faMoon, faSearch, faChevronDown, faLongArrowAltLeft);
+    library.add(faMoon);
   }
 }
