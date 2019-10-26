@@ -85,3 +85,9 @@
 .region-names.is-open {
   display: block;
 }
+
+@media (min-width: 48em) {
+  .region-names.is-open {
+    width: 100%;
+  }
+}
