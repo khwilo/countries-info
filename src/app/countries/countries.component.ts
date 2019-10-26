@@ -32,6 +32,7 @@ export class CountriesComponent implements OnInit {
   ngOnInit() {
     this.countryDataService.getAllCountries().subscribe((data: any[]) => {
       this.countries = data;
+      this.filteredCountries = data;
     });
   }
 
