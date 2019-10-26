@@ -15,9 +15,10 @@ import { CountriesModule } from './countries/countries.module';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
+  declarations: [AppComponent, NavigationComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     FontAwesomeModule,
