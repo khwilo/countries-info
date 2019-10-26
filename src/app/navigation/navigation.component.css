@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  padding: 2rem 1rem 2rem 1rem;
+  background-color: var(--dark-mode-element);
+}
+
+.logo,
+.mode {
+  padding: 1em 0 1em 0;
+}
+
+.logo .logo-name {
+  font-weight: 800;
+}
+
+.mode {
+  margin-left: auto;
+}
+
+.mode .moon-icon {
+  margin-right: 0.5rem;
+}
+
+.mode .mode-name {
+  font-weight: 600;
+}
+
+a {
+  cursor: pointer;
+}
