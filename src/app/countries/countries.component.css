@@ -1,0 +1,87 @@
+.main {
+  padding: 1em 2em;
+}
+
+@media (min-width: 48em) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.search-country {
+  display: flex;
+}
+
+.search-icon-container,
+.search-input,
+.country-filter {
+  background-color: var(--dark-mode-element);
+}
+
+.search-icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-icon {
+  padding: 0.75em;
+  cursor: pointer;
+}
+
+.search-input {
+  border: none;
+  outline: 1;
+  color: var(--dark-mode-text);
+  flex: 1;
+  padding: 1em;
+}
+
+.country-filter {
+  display: flex;
+  margin-top: 3em;
+  width: 60%;
+}
+
+@media (min-width: 48em) {
+  .country-filter {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+.country-filter-label {
+  padding: 1em;
+  font-weight: 600;
+}
+
+.dropdown-icon-container {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  margin-left: auto;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+}
+
+.region-names {
+  background-color: var(--dark-mode-element);
+  margin-top: 0.5em;
+  width: 60%;
+  list-style-type: none;
+  padding: 1em;
+  display: none;
+}
+
+.region-names > li {
+  font-weight: 600;
+  padding: 0.2em;
+  cursor: pointer;
+}
+
+.region-names.is-open {
+  display: block;
+}

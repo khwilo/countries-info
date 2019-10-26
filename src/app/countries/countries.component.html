@@ -1,1 +1,43 @@
-<p>countries works!</p>
+<main class="main">
+  <nav class="nav">
+    <div class="country-search">
+      <div class="search-country">
+        <div class="search-icon-container">
+          <span class="search-icon"><fa-icon icon="search"></fa-icon></span>
+        </div>
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="{{ searchPlaceHolder }}"
+        />
+      </div>
+    </div>
+
+    <div class="country-filter-container">
+      <div class="country-filter">
+        <div class="country-filter-label">
+          {{ filterByLabel }}
+        </div>
+        <div class="dropdown-icon-container">
+          <span class="dropdown-icon" (click)="openSelection()">
+            <fa-icon icon="chevron-down"></fa-icon>
+          </span>
+        </div>
+      </div>
+
+      <div class="region-names-container">
+        <ul class="region-names" id="region-names">
+          <li>Africa</li>
+          <li>America</li>
+          <li>Asia</li>
+          <li>Europe</li>
+          <li>Oceania</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="countries-container"></div>
+</main>

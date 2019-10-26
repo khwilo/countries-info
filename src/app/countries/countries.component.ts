@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
+  searchPlaceHolder = 'Search for a country...';
+  filterByLabel = 'Filter by Region';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  openSelection() {
+    const options = document.getElementById('region-names');
+    options.classList.toggle('is-open');
   }
-
 }
