@@ -9,6 +9,8 @@ export class CountriesComponent implements OnInit {
   searchPlaceHolder = 'Search for a country...';
   filterByLabel = 'Filter by Region';
 
+  regions: string[] = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+
   constructor() {}
 
   ngOnInit() {}
