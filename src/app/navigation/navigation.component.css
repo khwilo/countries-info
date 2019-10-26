@@ -27,4 +27,6 @@
 
 a {
   cursor: pointer;
+  color: var(--dark-mode-text);
+  text-decoration: none;
 }
