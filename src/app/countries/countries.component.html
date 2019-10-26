@@ -37,5 +37,28 @@
     </div>
   </nav>
 
-  <div class="countries-container"></div>
+  <div class="countries-container">
+    <div class="countries" *ngFor="let country of countries">
+      <div class="country-flag">
+        <img
+          class="flag-image"
+          src="{{ country.flag }}"
+          alt="{{ country.name }}'s flag"
+        />
+      </div>
+
+      <div class="country-details">
+        <div class="country-name">
+          {{ country.name }}
+        </div>
+        <div class="country-other-info">
+          <p>
+            <span class="population">Population:</span> {{ country.population }}
+          </p>
+          <p><span class="region">Region:</span> {{ country.region }}</p>
+          <p><span class="capital">Capital:</span> {{ country.capital }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
