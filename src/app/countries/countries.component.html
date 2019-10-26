@@ -11,6 +11,7 @@
           name="search"
           id="search"
           placeholder="{{ searchPlaceHolder }}"
+          [(ngModel)]="countryListFilter"
         />
       </div>
     </div>
@@ -38,7 +39,7 @@
   </nav>
 
   <div class="countries-container">
-    <div class="countries" *ngFor="let country of countries">
+    <div class="countries" *ngFor="let country of filteredCountries">
       <div class="country-flag">
         <img
           class="flag-image"
