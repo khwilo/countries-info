@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-const API_URL = 'https://restcountries.eu/rest/v2/all';
+const BASE_COUNTRIES_API_URL = 'https://restcountries.eu/rest/v2/all';
+const BASE_COUNTRIES_REGION_API_URL =
+  'https://restcountries.eu/rest/v2/region/';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,15 @@ export class CountryDataService {
   constructor(private http: HttpClient) {}
 
   getAllCountries() {
-    return this.http.get(API_URL).pipe(catchError(this.handleError));
+    return this.http
+      .get(BASE_COUNTRIES_API_URL)
+      .pipe(catchError(this.handleError));
+  }
+
+  getCountriesByRegion(region: string) {
+    return this.http
+      .get(`${BASE_COUNTRIES_REGION_API_URL}${region}`)
+      .pipe(catchError(this.handleError));
   }
 
   handleError(error) {

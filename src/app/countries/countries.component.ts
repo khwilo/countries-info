@@ -14,7 +14,7 @@ export class CountriesComponent implements OnInit {
   searchPlaceHolder = 'Search for a country...';
   filterByLabel = 'Filter by Region';
 
-  regions: string[] = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
   constructor(private countryDataService: CountryDataService) {}
 
@@ -31,7 +31,6 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit() {
     this.countryDataService.getAllCountries().subscribe((data: any[]) => {
-      console.log(data);
       this.countries = data;
     });
   }
@@ -46,5 +45,14 @@ export class CountriesComponent implements OnInit {
     return this.countries.filter(
       country => country.name.toLowerCase().indexOf(filterValue) !== -1
     );
+  }
+
+  fetchCountriesByRegion(region: string) {
+    const formatRegion = region.toLowerCase();
+    this.countryDataService
+      .getCountriesByRegion(formatRegion)
+      .subscribe((data: any[]) => {
+        this.filteredCountries = data;
+      });
   }
 }

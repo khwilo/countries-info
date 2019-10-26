@@ -30,7 +30,10 @@
 
       <div class="region-names-container">
         <ul class="region-names" id="region-names">
-          <li *ngFor="let region of regions">
+          <li
+            *ngFor="let region of regions"
+            (click)="fetchCountriesByRegion(region)"
+          >
             {{ region }}
           </li>
         </ul>
