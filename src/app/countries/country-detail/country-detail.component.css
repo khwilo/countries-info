@@ -56,9 +56,13 @@
 }
 
 .country-borders {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+  gap: 1em;
 }
 
 .country-borders .border {
   background-color: var(--dark-mode-element);
+  text-align: center;
+  padding: 0.2em 0;
 }
