@@ -1,57 +1,64 @@
-<main class="country-detail-container">
-  <div class="back-button-container">
-    <button routerLink="/">
-      <fa-icon icon="long-arrow-alt-left"></fa-icon>
-      <span class="button-label">Back</span>
-    </button>
-  </div>
+<div class="back-button-container">
+  <button routerLink="/">
+    <fa-icon icon="long-arrow-alt-left"></fa-icon>
+    <span class="button-label">Back</span>
+  </button>
+</div>
 
+<main class="country-detail-container">
   <section class="country-flag">
     <img src="{{ country?.flag }}" alt="" />
   </section>
 
-  <section class="country-main-info">
-    <article>
-      <p class="country-name">{{ country?.name }}</p>
-    </article>
-    <article>
-      <p>
-        <span class="native-name">Native Name:</span> {{ country?.nativeName }}
-      </p>
-      <p>
-        <span class="population">Population:</span> {{ country?.population }}
-      </p>
-      <p><span class="region">Region:</span> {{ country?.region }}</p>
-      <p>
-        <span class="sub-region">Sub Region:</span> {{ country?.subregion }}
-      </p>
-      <p><span class="capital">Capital:</span> {{ country?.capital }}</p>
-    </article>
-  </section>
+  <div class="country-details">
+    <div class="country-info">
+      <section class="country-main-info">
+        <article>
+          <p class="country-name">{{ country?.name }}</p>
+        </article>
+        <article>
+          <p>
+            <span class="native-name">Native Name:</span>
+            {{ country?.nativeName }}
+          </p>
+          <p>
+            <span class="population">Population:</span>
+            {{ country?.population }}
+          </p>
+          <p><span class="region">Region:</span> {{ country?.region }}</p>
+          <p>
+            <span class="sub-region">Sub Region:</span> {{ country?.subregion }}
+          </p>
+          <p><span class="capital">Capital:</span> {{ country?.capital }}</p>
+        </article>
+      </section>
 
-  <section class="country-other-info">
-    <p>
-      <span class="top-level-domain">Top Level Domain:</span>
-      {{ (country?.topLevelDomain)[0] }}
-    </p>
-    <p>
-      <span class="currencies">Currencies:</span>
-      {{ (country?.currencies)[0].name }}
-    </p>
-    <p>
-      <span class="languages">Languages: </span>
-      <span *ngFor="let language of country?.languages">
-        {{ language.name }}
-      </span>
-    </p>
-  </section>
-
-  <section class="country-border-info">
-    <p>Border Countries:</p>
-    <div class="country-borders">
-      <div class="border" *ngFor="let border of country?.borders">
-        <span class="border-name">{{ border }}</span>
-      </div>
+      <section class="country-other-info">
+        <p>
+          <span class="top-level-domain">Top Level Domain:</span>
+          {{ (country?.topLevelDomain)[0] }}
+        </p>
+        <p>
+          <span class="currencies">Currencies:</span>
+          {{ (country?.currencies)[0].name }}
+        </p>
+        <p class="languages-label">
+          Languages:
+          <span class="languages">
+            <span class="language" *ngFor="let language of country?.languages">
+              {{ language.name }}
+            </span>
+          </span>
+        </p>
+      </section>
     </div>
-  </section>
+    <section class="country-border-info">
+      <p>Border Countries:</p>
+      <div class="country-borders">
+        <div class="border" *ngFor="let border of country?.borders">
+          <span class="border-name">{{ border }}</span>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
