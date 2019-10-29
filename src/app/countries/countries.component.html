@@ -42,7 +42,11 @@
   </nav>
 
   <div class="countries-container">
-    <div class="countries" *ngFor="let country of filteredCountries">
+    <div
+      class="countries"
+      *ngFor="let country of filteredCountries"
+      routerLink="/countries/{{ country.alpha3Code }}"
+    >
       <div class="country-flag">
         <img
           class="flag-image"
