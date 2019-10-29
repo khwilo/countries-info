@@ -4,4 +4,6 @@
 
 Web app that fetches the information about a country from here: `https://restcountries.eu/`.
 
+![Project Demo](src/assets/demo/ft-site-demo.gif);
+
 Visit the live site using this link: `https://countries-info.netlify.com/`
