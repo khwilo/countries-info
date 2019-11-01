@@ -27,6 +27,24 @@ body {
   color: var(--dark-mode-text);
 }
 
+.light-mode {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+}
+
+.light-mode-element {
+  background-color: var(--light-mode-element) !important;
+}
+
+.light-mode-text {
+  color: var(--light-mode-text) !important;
+}
+
+.light-mode-input {
+  background-color: var(--light-mode-element) !important;
+  color: var(--light-mode-input) !important;
+}
+
 /* 375px */
 @media (min-width: 23.4375em) {
 }
