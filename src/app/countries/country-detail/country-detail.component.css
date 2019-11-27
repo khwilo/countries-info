@@ -26,6 +26,17 @@
   background-color: var(--dark-mode-element);
   color: var(--dark-mode-text);
   font-weight: 300;
+  border-radius: 0.15em;
+  -webkit-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.45);
+  -moz-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.45);
+  box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.45);
+}
+
+.country-borders .border {
+  border-radius: 0.15em;
+  -webkit-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
 }
 
 .back-button-container .button-label {
@@ -47,10 +58,9 @@
 }
 
 .country-flag img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   display: flex;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 @media (min-width: 48em) {

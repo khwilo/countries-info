@@ -9,6 +9,21 @@
   }
 }
 
+.search-country,
+.country-filter,
+.region-names,
+.countries {
+  -webkit-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.country-filter,
+.region-names,
+.countries {
+  border-radius: 0.2em;
+}
+
 .search-country {
   display: flex;
 }
@@ -24,6 +39,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
 }
 
 .search-icon {
@@ -37,6 +54,8 @@
   color: var(--dark-mode-text);
   flex: 1;
   padding: 1em;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
 }
 
 .country-filter {
@@ -128,6 +147,8 @@
 .country-flag img {
   max-width: 100%;
   max-height: 100%;
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
 }
 
 @media (min-width: 48em) {
