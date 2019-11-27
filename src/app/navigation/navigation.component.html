@@ -1,11 +1,26 @@
-<nav class="nav">
+<nav class="nav" [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }">
   <div class="logo">
-    <a class="logo-name" routerLink="/countries">{{ logoName }}</a>
+    <a
+      class="logo-name"
+      routerLink="/countries"
+      [ngClass]="{ 'light-mode-text': !(isDarkModeOn$ | async) }"
+    >
+      {{ logoName }}
+    </a>
   </div>
   <div class="mode">
     <span class="moon-icon">
-      <fa-icon icon="moon"></fa-icon>
+      <fa-icon
+        icon="moon"
+        [ngClass]="{ 'light-mode-text': !(isDarkModeOn$ | async) }"
+      ></fa-icon>
     </span>
-    <a class="mode-name">{{ mode }}</a>
+    <a
+      class="mode-name"
+      (click)="changeMode()"
+      [ngClass]="{ 'light-mode-text': !(isDarkModeOn$ | async) }"
+    >
+      {{ isDark ? "Light Mode" : "Dark Mode" }}
+    </a>
   </div>
 </nav>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwitchModeService } from './services/switch-mode.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Countries Information Display';
+
+  constructor(private switchMode: SwitchModeService) {}
+
+  isDarkModeOn$ = this.switchMode.isDarkMode$;
 }
