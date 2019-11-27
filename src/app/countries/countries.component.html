@@ -2,7 +2,10 @@
   <nav class="nav">
     <div class="country-search">
       <div class="search-country">
-        <div class="search-icon-container" id="searchIconContainer">
+        <div
+          class="search-icon-container"
+          [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }"
+        >
           <span class="search-icon"><fa-icon icon="search"></fa-icon></span>
         </div>
         <input
@@ -11,13 +14,17 @@
           name="countrySearch"
           id="countrySearch"
           placeholder="{{ searchPlaceHolder }}"
+          [ngClass]="{ 'light-mode-input': !(isDarkModeOn$ | async) }"
           [(ngModel)]="countryListFilter"
         />
       </div>
     </div>
 
     <div class="country-filter-container">
-      <div class="country-filter" id="countryFilter">
+      <div
+        class="country-filter"
+        [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }"
+      >
         <div class="country-filter-label">
           {{ filterByLabel }}
         </div>
@@ -29,7 +36,11 @@
       </div>
 
       <div class="region-names-container">
-        <ul class="region-names" id="region-names">
+        <ul
+          class="region-names"
+          id="region-names"
+          [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }"
+        >
           <li
             *ngFor="let region of regions"
             (click)="fetchCountriesByRegion(region)"
@@ -44,6 +55,7 @@
   <div class="countries-container">
     <div
       class="countries"
+      [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }"
       *ngFor="let country of filteredCountries"
       routerLink="/countries/{{ country.alpha3Code }}"
     >

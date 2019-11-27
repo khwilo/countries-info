@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CountryDataService } from './services/country-data.service';
+import { SwitchModeService } from '../services/switch-mode.service';
 
 @Component({
   selector: 'app-countries',
@@ -16,7 +17,12 @@ export class CountriesComponent implements OnInit {
 
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
-  constructor(private countryDataService: CountryDataService) {}
+  constructor(
+    private countryDataService: CountryDataService,
+    private switchModeService: SwitchModeService
+  ) {}
+
+  isDarkModeOn$ = this.switchModeService.isDarkMode$;
 
   get countryListFilter(): string {
     return this._countryListFilter;

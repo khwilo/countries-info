@@ -1,5 +1,11 @@
 <div class="back-button-container">
-  <button routerLink="/">
+  <button
+    routerLink="/"
+    [ngClass]="{
+      'light-mode-element': !(isDarkModeOn$ | async),
+      'light-mode-text': !(isDarkModeOn$ | async)
+    }"
+  >
     <fa-icon icon="long-arrow-alt-left"></fa-icon>
     <span class="button-label">Back</span>
   </button>
@@ -55,7 +61,11 @@
     <section class="country-border-info">
       <p>Border Countries:</p>
       <div class="country-borders">
-        <div class="border" *ngFor="let border of country?.borders">
+        <div
+          class="border"
+          [ngClass]="{ 'light-mode-element': !(isDarkModeOn$ | async) }"
+          *ngFor="let border of country?.borders"
+        >
           <span class="border-name">{{ border }}</span>
         </div>
       </div>
